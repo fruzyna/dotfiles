@@ -150,9 +150,7 @@ startup_notifications = 1
 launcher_tooltip = 1
 launcher_item_app = org.gnome.Nautilus.desktop
 launcher_item_app = org.gnome.Terminal.desktop
-launcher_item_app = firefox.desktop
-launcher_item_app = gedit.desktop
-launcher_item_app = homebank.desktop
+launcher_item_app = brave-browser.desktop
 
 #-------------------------------------
 # Clock

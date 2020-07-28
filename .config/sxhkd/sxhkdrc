@@ -12,8 +12,8 @@ ctrl + alt + t
 	gnome-terminal
 
 # program launcher
-super + @space
-	rofi -show run
+super + {_,alt +}  @space
+	rofi -show {d,_}run -theme slate -show-icons
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -21,7 +21,7 @@ super + Escape
 
 # shutdown computer
 super + shift + alt + {q,r}
-	shutdown {,-r} now
+	shutdown {_,-r} now
 
 # lock screen
 super + l
@@ -77,7 +77,7 @@ super + {p,b,comma,period}
 	bspc node -f @{parent,brother,first,second}
 
 # focus the next/previous node in the current desktop
-super + {_,shift + }c
+alt + {_,shift + }Tab
 	bspc node -f {next,prev}.local
 
 # focus the next/previous desktop in the current monitor
@@ -123,11 +123,11 @@ super + ctrl + shift + space
 #
 
 # expand a window by moving one of its side outward
-super + alt + {h,j,k,l}
+super + alt + {Left,Bottom,Top,Right}
 	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
 
 # contract a window by moving one of its side inward
-super + alt + shift + {h,j,k,l}
+super + alt + shift + {Left,Bottom,Top,Right}
 	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
 
 # move a floating window
