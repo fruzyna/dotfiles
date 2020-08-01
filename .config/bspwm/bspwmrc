@@ -7,7 +7,7 @@
 xmodmap -e "pointer = 3 2 1"
 
 # set wallpaper and lock screen
-feh --bg-fill ~/Nextcloud/Pictures/Wallpapers/chi_train_blurturn.jpg
+feh --bg-fill ~/Nextcloud/Pictures/Wallpapers/mke_cityhall_reflect.jpg
 xss-lock -- i3lock-fancy -p -- scrot -z &
 
 # load cursor theme
@@ -26,6 +26,8 @@ bspc config split_ratio          0.66
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
+bspc rule -a Steam desktop=^4
+
 # starup programs
 sxhkd &
 tint2 &
@@ -33,4 +35,5 @@ mate-volume-control-status-icon &
 nm-applet &
 nextcloud &
 wmname LG3D & # fix android studio
+steam &
 gtk-launch brave-adpgfoaiaohhedbfjfajiaeniofgjlfk-Default.desktop && sleep 1 && bspc node -d '^9' & # telegram chrome app
