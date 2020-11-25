@@ -13,7 +13,7 @@ dest=~
 echo "Linking all files in $src to $dest"
 
 # iterate through all files in working directory and subdirectories
-for f in $(find . -type f -not -path "./root/*"); do
+for f in $(find . -type f -not -path "./root/*" -not -path "./.git/*"); do
 	# ignore this script
 	if [ "$f" != "./setup.sh" ]; then
 		echo "---"
@@ -27,6 +27,14 @@ for f in $(find . -type f -not -path "./root/*"); do
 		dir=$(dirname $link)
 		# make parent directory if it doesn't exist
 		if ! test -d $dir; then
+            # remove file if exists in dir
+			if test -f $dir; then
+				echo "Removing existing file, $dir"
+				rm $dir
+			elif test -L $dir; then
+				echo "Removing existing link, $dir"
+				unlink $dir
+			fi
 			echo "Creating parent directory, $dir"
 			mkdir -p $link
 		fi
@@ -34,11 +42,13 @@ for f in $(find . -type f -not -path "./root/*"); do
 		if test -f $link; then
 			echo "Removing existing file, $link"
 			rm $link
-		fi
 		# remove link if it already exists
-		if test -L $link; then
+		elif test -L $link; then
 			echo "Removing existing link, $link"
 			unlink $link
+		elif test -d $link; then
+			echo "Removing existing directory, $link"
+			rm -rf $link
 		fi
 		# create symbolic link
 		echo "Linking $link > $target"
