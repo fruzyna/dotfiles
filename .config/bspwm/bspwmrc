@@ -7,16 +7,16 @@
 xmodmap -e "pointer = 3 2 1"
 
 # set wallpaper and lock screen
-feh --bg-fill ~/Nextcloud/Pictures/Wallpapers/mke_cityhall_reflect.jpg
+feh --bg-fill ~/Pictures/car_nascar_jj.jpg
 xss-lock -- i3lock-fancy -p -- scrot -z &
 
 # load cursor theme
 xsetroot -cursor_name left_ptr
 
 # set monitors and desktops
-bspc monitor HDMI-0 -d I II III IV
-bspc monitor DVI-D-0 -d V VI VII VIII
-bspc monitor DP-5 -d IX X
+bspc monitor DP-5 -d L1 L2 L3
+bspc monitor HDMI-0 -d C1 C2 C3 C4
+bspc monitor DVI-D-0 -d R1 R2 R3
 
 # configuration
 bspc config border_width         0
@@ -26,14 +26,13 @@ bspc config split_ratio          0.66
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
-bspc rule -a Steam desktop=^4
+bspc rule -a Steam desktop=^7
 
 # starup programs
 sxhkd &
 tint2 &
 mate-volume-control-status-icon &
 nm-applet &
-nextcloud &
 wmname LG3D & # fix android studio
 steam &
-gtk-launch brave-adpgfoaiaohhedbfjfajiaeniofgjlfk-Default.desktop && sleep 1 && bspc node -d '^9' & # telegram chrome app
+gtk-launch vivaldi-adpgfoaiaohhedbfjfajiaeniofgjlfk-Default.desktop && sleep 2 && bspc node -d '^1' & # telegram chrome app

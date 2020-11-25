@@ -28,12 +28,16 @@ super + l
 	i3lock-fancy -p -- scrot -z
 
 # open browser
-super + b
-	brave-browser --new-window homepage.fruzyna.net
+super + {b,e,p}
+	vivaldi {--new-window homepage.fruzyna.net,--new-window gmail.com,--incognito}
 
-# open email
-super + e
-	brave-browser --new-window gmail.com
+# control volume
+super + {v,f}
+	amixer -D pulse sset Master 5%{-,+}
+
+# switch outputs
+super + {g,h}
+	pacmd set-default-sink alsa_output.pci-0000_2{6_00.1.hdmi-stereo-extra1,8_00.4.analog-stereo}
 
 #
 # bspwm hotkeys
@@ -41,8 +45,7 @@ super + e
 
 # quit/restart bspwm
 super + alt + {q,r}
-	killall sxhkd tint2 mate-volume-control-status-icon nm-applet nextcloud telegram-desktop
-	bspc {quit,wm -r}
+	killall tint2 mate-volume-control-status-icon nm-applet nextcloud vivaldi-stable steam; bspc {quit,wm -r}
 
 # close and kill
 super + {_,shift + }q
@@ -127,11 +130,11 @@ super + ctrl + shift + space
 #
 
 # expand a window by moving one of its side outward
-super + alt + {Left,Bottom,Top,Right}
+super + alt + {Left,Down,Up,Right}
 	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
 
 # contract a window by moving one of its side inward
-super + alt + shift + {Left,Bottom,Top,Right}
+super + alt + shift + {Left,Down,Up,Right}
 	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
 
 # move a floating window
