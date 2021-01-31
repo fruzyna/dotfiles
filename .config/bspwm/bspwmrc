@@ -13,10 +13,12 @@ xss-lock -- i3lock-fancy -p -- scrot -z &
 # load cursor theme
 xsetroot -cursor_name left_ptr
 
+#/home/liam/display-scripts/all.sh
+
 # set monitors and desktops
-bspc monitor DP-5 -d L1 L2 L3
-bspc monitor HDMI-0 -d C1 C2 C3 C4
-bspc monitor DVI-D-0 -d R1 R2 R3
+bspc monitor DVI-D-0 -d L1 L2 L3
+bspc monitor DP-0 -d C1 C2 C3 C4
+bspc monitor DP-2 -d R1 R2 R3
 
 # configuration
 bspc config border_width         0
@@ -30,7 +32,7 @@ bspc rule -a Steam desktop=^7
 
 # starup programs
 sxhkd &
-tint2 &
+#tint2 &
 mate-volume-control-status-icon &
 nm-applet &
 wmname LG3D & # fix android studio
