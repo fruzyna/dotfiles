@@ -1,8 +1,8 @@
+#!/bin/bash
 # Dotfiles Setup Script
 # Liam Fruzyna
 # 2019-08-10
 # Creates links to all files in current directory (recursively) relative to the home directory.
-#!/bin/bash
 
 # where to link files to
 # (doesn't find files from here)
@@ -13,7 +13,7 @@ dest=~
 echo "Linking all files in $src to $dest"
 
 # iterate through all files in working directory and subdirectories
-for f in $(find . -type f -not -path "./root/*" -not -path "./.git/*"); do
+for f in $(find . -type f -not -path "./root/*" -not -path "./.git/*" -not -path "./README.md"); do
 	# ignore this script
 	if [ "$f" != "./setup.sh" ]; then
 		echo "---"
