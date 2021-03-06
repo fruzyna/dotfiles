@@ -24,8 +24,11 @@ mouse_warping none
 exec --no-startup-id xmodmap -e "pointer = 3 2 1"
 
 # set default audio devices
-exec pactl set-default-sink alsa_output.pci-0000_26_00.1.hdmi-stereo-extra1
-exec pactl set-default-source alsa_input.usb-Plantronics_Plantronics_Blackwire_315.1_E26F520DC76B6E409A596B6FF1AFC91A-00.analog-stereo
+exec --no-startup-id pactl set-default-sink alsa_output.pci-0000_26_00.1.hdmi-stereo-extra1
+exec --no-startup-id pactl set-default-source alsa_input.usb-Plantronics_Plantronics_Blackwire_315.1_E26F520DC76B6E409A596B6FF1AFC91A-00.analog-stereo
+
+# set wallpaper
+exec --no-startup-id feh --bg-fill ~/Pictures/chi_river_fork.jpg ~/Pictures/mke_cityhall_reflect.jpg ~/Pictures/space_observatory_clouds.jpg
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -53,7 +56,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+q kill
@@ -114,12 +117,7 @@ bindsym $mod+b exec vivaldi
 bindsym $mod+m exec geary
 
 # lock
-bindsym $mod+l exec i3lock
-
-# toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
-
-# change focus between tiling / floating windows
+bindsym $mod+l exec i3lock -i ~/Pictures/daft_hbfs.png -t
 #bindsym $mod+space focus mode_toggle
 
 # focus the parent container
