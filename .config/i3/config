@@ -120,7 +120,9 @@ bindsym $mod+$alt+space exec "rofi -show run -theme slate -show-icons"
 bindsym $mod+p exec "rofi -show run -theme slate -filter 'pass show -c '"
 
 # open applications
-bindsym $mod+b exec vivaldi
+bindsym $mod+b exec vivaldi --profile-directory=Default
+bindsym $mod+Shift+b exec vivaldi --profile-directory="Profile 2" # work
+bindsym $mod+Shift+n exec vivaldi --profile-directory="Profile 1" # tv
 bindsym $mod+n exec vivaldi --incognito
 bindsym $mod+m exec geary
 
