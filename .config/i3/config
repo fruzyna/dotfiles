@@ -30,6 +30,7 @@ exec --no-startup-id xmodmap -e "pointer = 3 2 1"
 # set default audio devices
 exec --no-startup-id pactl set-default-sink alsa_output.pci-0000_26_00.1.hdmi-stereo-extra1
 exec --no-startup-id pactl set-default-source alsa_input.usb-Plantronics_Plantronics_Blackwire_315.1_E26F520DC76B6E409A596B6FF1AFC91A-00.analog-stereo
+exec --no-startup-id pactl set-card-profile 41 output:hdmi-stereo-extra2
 
 # set wallpaper
 exec --no-startup-id feh --bg-fill ~/Pictures/chi_river_fork.jpg ~/Pictures/mke_cityhall_reflect.jpg ~/Pictures/space_observatory_clouds.jpg
@@ -57,7 +58,7 @@ set $refresh_i3status killall -SIGUSR1 i3status
 bindsym $mod+equal exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
 bindsym $mod+minus exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
 bindsym $mod+F6 exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym $mod+bracketleft exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+bindsym $mod+bracketleft exec --no-startup-id pactl set-card-profile 41 output:hdmi-stereo-extra2
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
