@@ -1,6 +1,6 @@
 [user]
 	name = Liam Fruzyna
-	email = liamfruzyna@gmail.com
+	email = liam@fruzyna.net
 	signingkey = A020498F
 [commit]
 	gpgsign = true
