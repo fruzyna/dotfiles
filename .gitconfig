@@ -1,7 +1,7 @@
 [user]
 	name = Liam Fruzyna
 	email = liam@fruzyna.net
-	signingkey = A020498F
+	signingkey = CD3AEC8A
 [commit]
 	gpgsign = true
 [color]
