@@ -1,0 +1,87 @@
+/* Shrink tab and URL bars */
+:root {
+  --tab-min-height: 24px !important;
+  --urlbar-min-height: 30px !important;
+}
+
+/* Shrink URL bar */
+#urlbar-container {
+  --urlbar-container-height: 32px !important;
+}
+
+/* Recenter URL bar */
+#urlbar {
+  --urlbar-height: 30px !important;
+  --urlbar-toolbar-height: 32px !important;
+}
+
+/* Decrease tab font size */
+.tab-text.tab-label {
+  font-size: 14px;
+}
+
+/* Move URL bar to bottom */
+#nav-bar {
+  position: fixed !important;
+  bottom: 0px;
+  display: -webkit-box;
+  width: 100%;
+  z-index: 1;
+}
+
+/* Fix panels sizing */
+.panel-viewstack {
+  max-height: unset !important;
+}
+
+/* Fix URL bar width */
+#nav-bar-customization-target {
+  -webkit-box-flex: 1;
+}
+
+/* Prevent bottom of page cut off */
+:root:not([inFullscreen]) {
+  --uc-bottom-toolbar-height: calc(30px + var(--toolbarbutton-outer-padding))
+}
+#browser, #customization-container {
+  margin-bottom: var(--uc-bottom-toolbar-height, 0px)
+}
+
+/* Hide sidebar header */
+#sidebar-header {
+  display: none;
+}
+
+/* Hide sidebar options */
+
+/* Hide sidebar splitter */
+.sidebar-splitter {
+  display: none;
+}
+
+/* Shrink sidebar */
+#sidebar-box {
+  min-width: 32px !important;
+  width: 32px !important;
+  transition-property: width;
+  transition-duration: 250ms;
+}
+
+/* Grow shidebar on hover */
+#sidebar-box:hover {
+  width: 200px !important;
+}
+
+/* Shrink titlebar */
+#titlebar {
+  visibility: hidden;
+  height: 3px;
+}
+
+/* Position close button top right */
+.titlebar-close:not([inFullscreen]) {
+  visibility: visible;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
