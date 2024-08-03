@@ -72,10 +72,17 @@
   width: 200px !important;
 }
 
-/* Shrink titlebar */
+/* Place titlebar over page content */
 #titlebar {
-  visibility: hidden;
-  height: 3px;
+  height: 40px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+/* Hide tabs */
+#TabsToolbar {
+  visibility: collapse;
 }
 
 /* Position close button top right */
@@ -84,4 +91,15 @@
   position: absolute;
   top: 0;
   right: 0;
+}
+
+/*
+ * #sidebar-box {
+ *   -moz-window-dragging: drag;
+ * }
+ */
+
+/* Show permissions popups above the address bar instead of below */
+.popup-notification-panel {
+  margin-top: -200px !important;
 }
