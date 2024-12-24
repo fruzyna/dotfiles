@@ -73,16 +73,11 @@
 }
 
 /* Place titlebar over page content */
-#titlebar {
+#TabsToolbar {
   height: 40px;
   position: absolute;
   top: 0;
   width: 100%;
-}
-
-/* Hide tabs */
-#TabsToolbar {
-  visibility: collapse;
 }
 
 /* Position close button top right */
