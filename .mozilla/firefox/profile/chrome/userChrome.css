@@ -15,11 +15,6 @@
   --urlbar-toolbar-height: 32px !important;
 }
 
-/* Decrease tab font size */
-.tab-text.tab-label {
-  font-size: 14px;
-}
-
 /* Move URL bar to bottom */
 #nav-bar {
   position: fixed !important;
@@ -27,6 +22,7 @@
   display: -webkit-box;
   width: 100%;
   z-index: 1;
+  background-color: #F2F2F2 !important;
 }
 
 /* Fix panels sizing */
@@ -47,20 +43,8 @@
   margin-bottom: var(--uc-bottom-toolbar-height, 0px)
 }
 
-/* Hide sidebar header */
-#sidebar-header {
-  display: none;
-}
-
-/* Hide sidebar options */
-
-/* Hide sidebar splitter */
-.sidebar-splitter {
-  display: none;
-}
-
 /* Shrink sidebar */
-#sidebar-box {
+#sidebar-main {
   min-width: 32px !important;
   width: 32px !important;
   transition-property: width;
@@ -68,8 +52,27 @@
 }
 
 /* Grow shidebar on hover */
-#sidebar-box:hover {
+#sidebar-main:hover {
   width: 200px !important;
+}
+
+/* Unround the tabs */
+.tab-background, .toolbarbutton-1 {
+  margin: 0 !important;
+  border-radius: 0 !important;
+}
+
+.tab-content {
+  padding: 8px !important;
+}
+
+/* Hide random spacer and titlebar buttons */
+#vertical-spacer {
+  display: none;
+}
+
+.titlebar-buttonbox-container {
+  display: none;
 }
 
 /* Place titlebar over page content */
@@ -79,20 +82,6 @@
   top: 0;
   width: 100%;
 }
-
-/* Position close button top right */
-.titlebar-close:not([inFullscreen]) {
-  visibility: visible;
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-/*
- * #sidebar-box {
- *   -moz-window-dragging: drag;
- * }
- */
 
 /* Show permissions popups above the address bar instead of below */
 .popup-notification-panel {
