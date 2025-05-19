@@ -1,0 +1,8 @@
+{
+    "editor.fontFamily": "'Cascadia Code', 'Droid Sans Mono', 'monospace', monospace, 'Symbols Nerd Font Mono'",
+    "editor.minimap.enabled": false,
+    "terminal.integrated.defaultProfile.linux": "fish",
+    "update.mode": "none",
+    "window.titleBarStyle": "custom",
+    "workbench.colorTheme": "Quiet Light"
+}
