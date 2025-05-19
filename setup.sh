@@ -13,7 +13,7 @@ dest=~
 echo "Linking all files in $src to $dest"
 
 # iterate through all files in working directory and subdirectories
-for f in $(find . -type f -not -path "./root/*" -not -path "./.git/*" -not -path "./README.md"); do
+for f in $(find . -type f -not -path "./root/*" -not -path "./.git/*" -not -path "./.mozilla/*" -not -path "./README.md"); do
 	# ignore this script
 	if [ "$f" != "./setup.sh" ]; then
 		echo "---"
@@ -54,4 +54,11 @@ for f in $(find . -type f -not -path "./root/*" -not -path "./.git/*" -not -path
 		echo "Linking $link > $target"
 		ln -s $target $link
 	fi
+done
+
+# custom placement for Firefox flatpak
+ff_profile=~/.var/app/org.mozilla.firefox/.mozilla/firefox/*.default-release
+for prof in $ff_profile; do
+    mkdir -p $prof/chrome
+    cp .mozilla/firefox/profile/chrome/userChrome.css $prof/chrome
 done
