@@ -43,44 +43,23 @@
   margin-bottom: var(--uc-bottom-toolbar-height, 0px)
 }
 
-/* Shrink sidebar */
-#sidebar-main {
-  min-width: 32px !important;
-  width: 32px !important;
-  transition-property: width;
-  transition-duration: 250ms;
-}
-
-/* Grow shidebar on hover */
-#sidebar-main:hover {
-  width: 200px !important;
-}
-
-/* Unround the tabs */
+/* Make tabs (& new tab button) larger and less round */
 .tab-background, .toolbarbutton-1 {
-  margin: 0 !important;
-  border-radius: 0 !important;
+  border-radius: 4px !important;
+  margin-left: 4px !important;
+  margin-right: 4px !important;
+  min-width: 42px;
+  height: 32px;
 }
-
 .tab-content {
-  padding: 8px !important;
+  padding-left: 8px !important;
+  padding-right: 8px !important;
+  height: 36px;
 }
 
-/* Hide random spacer and titlebar buttons */
-#vertical-spacer {
-  display: none;
-}
-
+/* Hide titlebar buttons */
 .titlebar-buttonbox-container {
   display: none;
-}
-
-/* Place titlebar over page content */
-#TabsToolbar {
-  height: 40px;
-  position: absolute;
-  top: 0;
-  width: 100%;
 }
 
 /* Show permissions popups above the address bar instead of below */
