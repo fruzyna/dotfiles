@@ -4,5 +4,12 @@
     "terminal.integrated.defaultProfile.linux": "fish",
     "update.mode": "none",
     "window.titleBarStyle": "custom",
-    "workbench.colorTheme": "Quiet Light"
+    "workbench.colorTheme": "Quiet Light",
+    "chat.agent.enabled": false,
+    "chat.disableAIFeatures": true,
+    "redhat.telemetry.enabled": false,
+    "extensions.ignoreRecommendations": true,
+    "security.workspace.trust.untrustedFiles": "open",
+    "dev.containers.dockerPath": "podman",
+    "dev.containers.dockerSocketPath": "/var/run/podman/podman.sock"
 }
