@@ -11,5 +11,6 @@
     "extensions.ignoreRecommendations": true,
     "security.workspace.trust.untrustedFiles": "open",
     "dev.containers.dockerPath": "podman",
-    "dev.containers.dockerSocketPath": "/var/run/podman/podman.sock"
+    "dev.containers.dockerSocketPath": "/var/run/podman/podman.sock",
+    "diffEditor.ignoreTrimWhitespace": false
 }

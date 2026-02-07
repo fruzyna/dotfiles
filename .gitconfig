@@ -1,6 +1,8 @@
 [user]
 	name = Liam Fruzyna
 	email = liam@fruzyna.net
+[push]
+	autoSetupRemote = true
 [commit]
 [color]
 	ui = auto
@@ -8,3 +10,8 @@
 	rebase = false
 [init]
 	defaultBranch = main
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
