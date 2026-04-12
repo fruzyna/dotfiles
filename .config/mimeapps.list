@@ -1,0 +1,7 @@
+[Default Applications]
+application/octet-stream=org.gnome.TextEditor.desktop
+application/zip=org.gnome.Nautilus.desktop
+
+[Added Associations]
+application/octet-stream=org.gnome.TextEditor.desktop;
+application/zip=org.gnome.Nautilus.desktop;
