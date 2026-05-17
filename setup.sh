@@ -13,7 +13,7 @@ dest=~
 echo "Linking all files in $src to $dest"
 
 # iterate through all files in working directory and subdirectories
-for f in $(find . -type f -not -path "./root/*" -not -path "./.git/*" -not -path "./.mozilla/*" -not -path "./README.md"); do
+for f in $(find . -type f -not -path "./root/*" -not -path "./.git/*" -not -path "./.mozilla/*" -not -path "./README.md" -not -path "./gnome-dconf.ini"); do
 	# ignore this script
 	if [ "$f" != "./setup.sh" ]; then
 		echo "---"
