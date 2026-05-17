@@ -56,8 +56,8 @@ for f in $(find . -type f -not -path "./root/*" -not -path "./.git/*" -not -path
 	fi
 done
 
-# custom placement for Firefox flatpak
-ff_profile=~/.var/app/org.mozilla.firefox/.mozilla/firefox/*.default-release
+# custom placement for Firefox profile
+ff_profile=~/.config/mozilla/firefox/*.default-release
 for prof in $ff_profile; do
     mkdir -p $prof/chrome
     cp .mozilla/firefox/profile/chrome/userChrome.css $prof/chrome
