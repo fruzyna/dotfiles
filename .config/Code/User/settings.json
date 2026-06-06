@@ -14,5 +14,6 @@
     "dev.containers.dockerSocketPath": "/var/run/podman/podman.sock",
     "diffEditor.ignoreTrimWhitespace": false,
     "terminal.integrated.stickyScroll.enabled": false,
-    "update.showReleaseNotes": false
+    "update.showReleaseNotes": false,
+    "terminal.integrated.initialHint": false
 }
