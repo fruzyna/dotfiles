@@ -15,32 +15,24 @@
   --urlbar-toolbar-height: 32px !important;
 }
 
-/* Move URL bar to bottom */
-#nav-bar {
-  position: fixed !important;
-  bottom: 0px;
-  display: -webkit-box;
-  width: 100%;
-  z-index: 1;
-  background-color: #F2F2F2 !important;
+/*
+ * Move URL bar under page
+ * https://stackoverflow.com/questions/7425665/switching-the-order-of-block-elements-with-css
+ */
+html:body {
+  display: flex;
+  flex-flow: column;
+}
+#navigator-toolbox {
+  order: 2;
+}
+#browser {
+  order: 1;
 }
 
 /* Fix panels sizing */
 .panel-viewstack {
   max-height: unset !important;
-}
-
-/* Fix URL bar width */
-#nav-bar-customization-target {
-  -webkit-box-flex: 1;
-}
-
-/* Prevent bottom of page cut off */
-:root:not([inFullscreen]) {
-  --uc-bottom-toolbar-height: calc(30px + var(--toolbarbutton-outer-padding))
-}
-#browser, #customization-container {
-  margin-bottom: var(--uc-bottom-toolbar-height, 0px)
 }
 
 /* Make tabs (& new tab button) larger and less round */
@@ -57,12 +49,12 @@
   height: 36px;
 }
 
-/* Hide titlebar buttons */
-.titlebar-buttonbox-container {
+/* Hide titlebar buttons and irremovable spacer */
+.titlebar-buttonbox-container, #vertical-spacer {
   display: none;
 }
 
 /* Show permissions popups above the address bar instead of below */
 .popup-notification-panel {
-  margin-top: -200px !important;
+  margin-top: -500px !important;
 }
